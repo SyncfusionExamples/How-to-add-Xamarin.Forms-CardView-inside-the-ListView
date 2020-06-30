@@ -104,6 +104,6 @@ public class SocialMediaAppViewModel
 
 Also refer our [feature tour page](https://www.syncfusion.com/xamarin-ui-controls/xamarin-cards) to know more features available in our button.
 
-#Troubleshooting
-##Path too long exception
+# Troubleshooting
+## Path too long exception
 If you are facing path too long exception when building this example project, close Visual Studio and rename the repository to short and build the project.
