@@ -1,108 +1,55 @@
-# How-to-add-Xamarin.Forms-CardView-inside-the-ListView
+# How to add Xamarin.Forms CardView inside the ListView
 
-This demo sample explains about How to add Xamarin.Forms SfCardView inside the ListView. For more reference, please refer the below KB
+This repository contains sample to add the [Syncfusion Xamarin.Forms Card View](https://help.syncfusion.com/xamarin/cards/getting-started) control inside the [Xamarin.Forms ListView](https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/) control.
 
-[How to add cards to the ListView in Xamarin.Forms](https://www.syncfusion.com/kb/11650/?utm_medium=listing&utm_source=github-examples)
+Please refer the KB through this [link](https://www.syncfusion.com/kb/11650/how-to-add-cards-to-the-listview-in-xamarin-forms).
 
-It is a common use case to show the cards in a Xamarin.Forms.ListView. So that UI will be clean, and we need not worry about the memory usage, as the ListView by default handles the UI virtualization.  This section describes how to bind a SfCardView instance for each row in the list.
- 
-**[XAML]**
+## Syncfusion controls:
 
-```
+This project used the following Syncfusion control(s):
+* [SfCardView](https://www.syncfusion.com/xamarin-ui-controls/xamarin-cards)
 
-xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
- 
-..
- 
-<!--  Binding the View Model  -->
- 
-    <ContentPage.BindingContext>
-        <viewmodel:SocialMediaAppViewModel />
-    </ContentPage.BindingContext>
- 
-<!--  ListView  as parent layout  -->
-        <ListView
-            x:Name="EventListView"
-            ItemsSource="{Binding Items}"
-            RowHeight="100"
-            SeparatorVisibility="None">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
- 
-                        <!--  CardView as its DataTemplate  -->
-                        <cards:SfCardView Margin="10">
-                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                <StackLayout Orientation="Horizontal">
-                                    <Image
-                                        Margin="10,0,0,0"
-                                        HeightRequest="40"
-                                        Source="{Binding Image}"
-                                        WidthRequest="40" />
-                                    <Label
-                                        Margin="10,0,0,0"
-                                        FontAttributes="Bold"
-                                        FontSize="16"
-                                        HorizontalOptions="Start"
-                                        LineBreakMode="NoWrap"
-                                        MaxLines="1"
-                                        Text="{Binding Title}"
-                                        TextColor="Black"
-                                        VerticalOptions="Center" />
-                                </StackLayout>
-                            </Grid>
-                        </cards:SfCardView>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-```
- 
- **[C#]**
- 
- ```
+## Supported platforms
 
-public class SocialMediaAppModel
-{
-    public string Title {get; set;}
- 
-    public string Image {get; set;}
-}
-```
+| Platforms | Supported versions |
+| --------- | ------------------ |
+| Android   | API level 21 and later versions |
+| iOS | iOS 9.0 and later versions |
+| UWP | Windows 10 devices |
 
-**[C#]**
-```
+## Requirements to run the sample
 
-public class SocialMediaAppViewModel
-{
-   public IEnumerable< SocialMediaAppModel > Items { get; set; }
- 
-        public SocialMediaAppViewModel ()
-        {
-            Items = new SocialMediaAppModel []
-            {
-                new SocialMediaAppModel (){ Title = "Facebook" , Image = "FacebookFill.png"},
-                new SocialMediaAppModel (){ Title = "Gmail" , Image = "GmailFill.png"},
-                new SocialMediaAppModel (){ Title = "Instagram" , Image = "InstagramFill.png"},
-                new SocialMediaAppModel (){ Title = "WhatsApp" , Image = "WhatsappFill.png"},
-            };
-        }
-}
+* [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)
 
-```
- 
-**See Also**
+Refer to the following link for more details - [System Requirements](https://help.syncfusion.com/xamarin/system-requirements)
 
-[How to notify the tapped action on cards](https://help.syncfusion.com/xamarin/cards/events?_ga=2.181702823.1232783100.1593359517-1450022673.1574142796#cardtapped)
+## How to run the sample
 
-[How to dismiss the card programmatically](https://help.syncfusion.com/xamarin/cards/getting-started?_ga=2.181702823.1232783100.1593359517-1450022673.1574142796#dismiss-the-card-programmatically)
+1. Clone the sample and open it in Visual Studio.
 
-[How to dismiss the card while swiping](https://help.syncfusion.com/xamarin/cards/getting-started?_ga=2.181702823.1232783100.1593359517-1450022673.1574142796#swipetodismiss)
+   *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
+   
+2. Register your license key in the App.xaml.cs file as demonstrated in the following code.
 
-[How to find the visible card index changed](https://help.syncfusion.com/xamarin/cards/events?_ga=2.181702823.1232783100.1593359517-1450022673.1574142796#visiblecardindexchanged)
+		public App()
+		{
+			//Register Syncfusion license
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+	
+			InitializeComponent();
+	
+			MainPage = new App1.MainPage();
+		}
+		
+	Refer to this [link](https://help.syncfusion.com/xamarin/licensing/overview) for more details.
+	
+3. Clean and build the application.
 
+4. Run the application.
 
-Also refer our [feature tour page](https://www.syncfusion.com/xamarin-ui-controls/xamarin-cards) to know more features available in our button.
+## License
+
+Syncfusion has no liability for any damage or consequence that may arise by using or viewing the samples. The samples are for demonstrative purposes, and if you choose to use or access the samples, you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, for accessing, or viewing the samples. By accessing, viewing, or seeing the samples, you acknowledge and agree Syncfusion’s samples will not allow you seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize, or otherwise do anything with Syncfusion’s samples.
 
 # Troubleshooting
 ## Path too long exception
