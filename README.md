@@ -1,6 +1,6 @@
 # How to add Xamarin.Forms CardView inside the ListView
 
-This repository contains sample for how to add the [Syncfusion Xamarin.Forms Card View](https://help.syncfusion.com/xamarin/cards/getting-started) control inside the [Xamarin.Forms ListView](https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/) control.
+This repository contains sample to add the [Syncfusion Xamarin.Forms Card View](https://help.syncfusion.com/xamarin/cards/getting-started) control inside the [Xamarin.Forms ListView](https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/) control.
 
 Please refer the KB through this [link](https://www.syncfusion.com/kb/11650/how-to-add-cards-to-the-listview-in-xamarin-forms).
 
